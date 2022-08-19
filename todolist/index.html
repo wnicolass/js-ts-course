@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>To-Do List 📝</h1>
+      <header class="search">
+        <input type="text" class="input" id="filter" />
+        <button class="btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </header>
+      <div>
+        <input
+          type="text"
+          class="input-todo"
+          title="Add new task"
+          placeholder="Enter task..."
+        />
+        <button class="btn-todo">Add</button>
+      </div>
+
+      <ul class="todo"></ul>
+    </section>
+
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>

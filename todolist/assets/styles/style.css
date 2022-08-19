@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+  --purple: rgb(110, 3, 186);
+  --purple-dark: rgb(56, 3, 94);
+
+  --lightblue: #47b9ee;
+
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--lightblue);
+
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5em;
+
+  width: 100vw;
+
+  overflow-x: hidden;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  padding: 0.1rem 1rem;
+
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+button.btn-todo {
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #fff;
+
+  background-color: var(--lightblue);
+
+  height: 3rem;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  transition: filter 0.3s;
+}
+
+button.btn-todo:hover {
+  filter: brightness(1.2);
+}
+
+.search {
+  height: 0rem;
+}
+
+.search .input {
+  background-color: rgba(211, 213, 215, 0.233);
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+
+  color: rgb(9, 75, 136);
+
+  padding: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+
+  position: absolute;
+  top: 28px;
+  right: 10px;
+
+  transition: width 0.3s ease;
+}
+
+.search .input:focus {
+  border: 1px solid var(--lightblue);
+}
+
+.search.active .input {
+  width: 20rem;
+}
+
+.btn {
+  background-color: transparent;
+  border-radius: 0.2rem;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 2rem;
+
+  position: absolute;
+  top: 28px;
+  right: 10px;
+
+  height: 3rem;
+  width: 3rem;
+
+  transition: transform 0.3s ease;
+
+  color: var(--lightblue);
+}
+
+button.delete {
+  font-family: inherit;
+  font-size: inherit;
+
+  background-color: #ce0000;
+
+  color: #fff;
+
+  height: 2rem;
+  padding: 0.1rem 0.5rem;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  transition: filter 0.3s;
+
+  display: inline-flex;
+
+  position: absolute;
+  right: 5px;
+  top: 13px;
+}
+
+button.delete:hover {
+  filter: brightness(1.2);
+}
+
+.container {
+  max-width: 90%;
+
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #ffffff;
+
+  border-radius: 0.7rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+}
+
+.container h1 {
+  font-size: 3rem;
+  text-align: start;
+  color: var(--lightblue);
+
+  margin: 1rem 0 2rem;
+}
+
+.container .input-todo {
+  font-size: 1.6rem;
+  font-family: inherit;
+  color: rgb(9, 75, 136);
+
+  height: 3rem;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  padding: 2rem;
+
+  background-color: rgba(211, 213, 215, 0.233);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.container input:focus {
+  border: 1px solid var(--lightblue);
+}
+
+.container header + div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+.container .todo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+
+  margin-inline: 2rem;
+}
+
+.container .todo li {
+  position: relative;
+  list-style: decimal;
+
+  color: var(--lightblue);
+
+  align-items: center;
+
+  padding: 1rem;
+
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem;
+  }
+
+  .container h1 {
+    font-size: 4rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .container input {
+    width: 70%;
+
+    margin-left: 2rem;
+
+    height: 5rem;
+  }
+
+  button.btn-todo {
+    width: 12rem;
+    margin-right: 2rem;
+  }
+
+  .container header + div {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .container .todo li {
+    font-size: 2rem;
+    color: var(--lightblue);
+
+    height: 5rem;
+    line-height: 1.5;
+  }
+
+  button.delete {
+    height: 3rem;
+    width: 3rem;
+
+    top: 10px;
+  }
+
+  .search .input {
+    height: 5rem;
+    width: 5rem;
+
+    right: 50px;
+    font-size: 1.6rem;
+  }
+
+  .search.active .input {
+    width: 30rem;
+  }
+
+  .btn {
+    height: 5rem;
+    width: 5rem;
+
+    right: 50px;
+  }
+}
