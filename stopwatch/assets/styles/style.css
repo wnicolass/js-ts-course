@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
+:root {
+  --purple: rgb(110, 3, 186);
+  --purple-dark: rgb(56, 3, 94);
+
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+
+  font-size: 1.6rem;
+  font-family: "Silkscreen", cursive;
+  line-height: 1.5em;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.container {
+  width: 70rem;
+  height: 20rem;
+  padding: 2rem;
+  background: #000;
+
+  border-radius: 0.7rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container h1 {
+  font-size: 10rem;
+  position: absolute;
+  top: 60px;
+  left: calc(50vw - 47rem);
+  color: #ffffff;
+}
+
+.timer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 8em;
+  line-height: 0;
+  padding-bottom: 2rem;
+
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.buttons button {
+  padding: 2rem 5rem;
+
+  font-family: inherit;
+  font-size: 5rem;
+
+  color: #fff;
+
+  background-color: transparent;
+
+  border: 1px dashed #fff;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+.buttons button:active {
+  transform: scale(0.98);
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.pausado {
+  color: #ff0000;
+}
