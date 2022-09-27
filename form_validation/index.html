@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model</title>
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Resgistration Form</h1>
+      <p>
+        No field can be empty <br />
+        Username can only contain letters and/or numbers <br />
+        Username must be between 3 and 12 characters <br />
+        Password must be between 6 and 12 characters
+      </p>
+
+      <form action="/" method="POST" class="form">
+        <div class="form-control">
+          <label>Name:</label>
+          <input type="text" class="name" />
+        </div>
+
+        <div class="form-control">
+          <label>Surname:</label>
+          <input type="text" class="surname" />
+        </div>
+
+        <div class="form-control">
+          <label>CPF:</label>
+          <input type="text" class="cpf" />
+        </div>
+
+        <div class="form-control">
+          <label>User:</label>
+          <input type="text" class="user" />
+        </div>
+
+        <div class="form-control">
+          <label>Password:</label>
+          <input type="text" class="password" />
+        </div>
+
+        <div class="form-control">
+          <label>Confirm password:</label>
+          <input type="text" class="confirm-password" />
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>
