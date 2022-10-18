@@ -1,38 +1,41 @@
+const resultEl = document.querySelector(".result");
+
 const request = (obj) => {
   //xhr -> xml http request
-  const xhr = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
 
-  xhr.open(obj.method, obj.url, true);
-  xhr.send();
+    xhr.open(obj.method, obj.url, true);
+    xhr.send();
 
-  xhr.addEventListener("load", () => {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      obj.success(xhr.responseText);
-    } else {
-      obj.error(xhr.statusText);
-    }
+    xhr.addEventListener("load", () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.responseText);
+      } else {
+        reject(xhr.statusText);
+      }
+    });
   });
 };
 
 function loadResult(res) {
-  const resultEl = document.querySelector(".result");
-
   resultEl.innerHTML = res;
 }
 
-function loadPage(el) {
+async function loadPage(el) {
   const href = el.getAttribute("href");
 
-  request({
+  const objConfig = {
     method: "GET",
     url: href,
-    success(res) {
-      loadResult(res);
-    },
-    error(errText) {
-      console.log(errText);
-    },
-  });
+  };
+
+  try {
+    const res = await request(objConfig);
+    loadResult(res);
+  } catch (e) {
+    resultEl.innerHTML = `<h1>Error: ${e}</h1>`;
+  }
 }
 
 document.body.addEventListener("click", (e) => {
