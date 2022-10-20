@@ -26,6 +26,8 @@ function loadElements(data) {
   resultEl.appendChild(tableEl);
 }
 
-fetch("people.json")
-  .then((res) => res.json())
-  .then((data) => loadElements(data));
+axios("people.json").then((res) => loadElements(res.data));
+
+// fetch("people.json")
+//   .then((res) => res.json())
+//   .then((data) => loadElements(data));
