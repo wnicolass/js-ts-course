@@ -25,18 +25,15 @@ function loadResult(res) {
 async function loadPage(el) {
   const href = el.getAttribute("href");
 
-  // const objConfig = {
-  //   method: "GET",
-  //   url: href,
-  // };
+  try {
+    const res = await fetch(href);
+    if (res.status !== 200) throw new Error("NOT FOUND!");
 
-  fetch(href)
-    .then((res) => {
-      if (res.status !== 200) throw new Error("not found");
-      return res.text();
-    })
-    .then((html) => loadResult(html))
-    .catch((e) => console.log(e));
+    const html = await res.text();
+    loadResult(html);
+  } catch (err) {
+    resultEl.innerHTML = err;
+  }
 }
 
 document.body.addEventListener("click", (e) => {
