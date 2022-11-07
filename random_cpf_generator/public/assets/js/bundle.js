@@ -29,13 +29,18 @@ var GenerateCPF = /*#__PURE__*/function () {
       return "" + Math.floor(Math.random() * (max - min) + min);
     }
   }, {
+    key: "formatCPF",
+    value: function formatCPF(cpf) {
+      return cpf.slice(0, 3) + "." + cpf.slice(3, 6) + "." + cpf.slice(6, 9) + "-" + cpf.slice(9, 11);
+    }
+  }, {
     key: "generateNewCPF",
     value: function generateNewCPF() {
       var CPFWithoutDigit = this.randomNumber();
       var digit1 = _ValidCPF__WEBPACK_IMPORTED_MODULE_0__["default"].generateDigit(CPFWithoutDigit);
       var digit2 = _ValidCPF__WEBPACK_IMPORTED_MODULE_0__["default"].generateDigit(CPFWithoutDigit + digit1);
       var newCPF = CPFWithoutDigit + digit1 + digit2;
-      return newCPF;
+      return this.formatCPF(newCPF);
     }
   }]);
   return GenerateCPF;
