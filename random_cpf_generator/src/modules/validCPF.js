@@ -1,4 +1,4 @@
-class ValidCPF {
+export default class ValidCPF {
   constructor(cpf) {
     Object.defineProperty(this, "cleancpf", {
       value: cpf.replace(/\D+/g, ""),
