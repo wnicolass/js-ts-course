@@ -24,9 +24,9 @@ var GenerateCPF = /*#__PURE__*/function () {
   _createClass(GenerateCPF, [{
     key: "randomNumber",
     value: function randomNumber() {
-      var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000000000;
+      var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100000000;
       var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 999999999;
-      return "" + Math.floor(Math.random * (max - min) + min);
+      return "" + Math.floor(Math.random() * (max - min) + min);
     }
   }, {
     key: "generateNewCPF",
@@ -816,6 +816,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/styles/style.css */ "./src/assets/styles/style.css");
 
 
+(function () {
+  var generate = new _modules_Generate__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  var resultContainer = document.querySelector(".result");
+  resultContainer.textContent = generate.generateNewCPF();
+})();
 })();
 
 /******/ })()

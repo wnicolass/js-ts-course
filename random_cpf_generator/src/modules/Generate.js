@@ -1,8 +1,8 @@
 import ValidCPF from "./ValidCPF";
 
 export default class GenerateCPF {
-  randomNumber(min = 1000000000, max = 999999999) {
-    return "" + Math.floor(Math.random * (max - min) + min);
+  randomNumber(min = 100000000, max = 999999999) {
+    return "" + Math.floor(Math.random() * (max - min) + min);
   }
 
   generateNewCPF() {
