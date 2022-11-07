@@ -42,4 +42,20 @@ body {
 .container h1 {
   font-size: 3rem;
   text-align: center;
+
+  margin-bottom: 5rem;
+}
+
+.container .result {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.container .result p {
+  font-size: 20px;
+
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 1rem;
 }

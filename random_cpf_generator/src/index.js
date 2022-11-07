@@ -4,5 +4,7 @@ import "./assets/styles/style.css";
 (() => {
   const generate = new GenerateCPF();
   const resultContainer = document.querySelector(".result");
-  resultContainer.textContent = generate.generateNewCPF();
+  const p = document.createElement("p");
+  p.textContent = generate.generateNewCPF();
+  resultContainer.appendChild(p);
 })();
