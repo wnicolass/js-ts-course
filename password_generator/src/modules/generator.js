@@ -1,7 +1,28 @@
 const randomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min) + min);
-const uppercase = () => String.fromCharCode(randomNumber(65, 91));
-const lowercase = () => String.fromCharCode(randomNumber(97, 123));
-const number = () => String.fromCharCode(randomNumber(48, 57));
+const generateUppercase = () => String.fromCharCode(randomNumber(65, 91));
+const generateLowercase = () => String.fromCharCode(randomNumber(97, 123));
+const generateNumber = () => String.fromCharCode(randomNumber(48, 57));
 const symbols = "!@#$%^&*(){}[]=<>/,.";
-const randomSymbol = () => symbols.charAt(randomNumber(0, symbols.length));
+const generateRandomSymbol = () =>
+  symbols.charAt(randomNumber(0, symbols.length));
+
+export default function generatePassword(
+  length,
+  upper,
+  lower,
+  numbers,
+  symbols
+) {
+  const passwordArray = [];
+  length = +length;
+
+  for (let i = 0; i < length; i++) {
+    upper && passwordArray.push(generateUppercase());
+    lower && passwordArray.push(generateLowercase());
+    numbers && passwordArray.push(generateNumber());
+    symbols && passwordArray.push(generateRandomSymbol());
+  }
+
+  return passwordArray.join("").slice(0, length);
+}

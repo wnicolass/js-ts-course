@@ -1,0 +1,1 @@
+import generatePassword from "./generator";
