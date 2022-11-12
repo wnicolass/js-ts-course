@@ -2,6 +2,77 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/formhandler.js":
+/*!************************************!*\
+  !*** ./src/modules/formhandler.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _generator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generator */ "./src/modules/generator.js");
+
+var generatedPassword = document.querySelector(".generated-password");
+var lengthEl = document.getElementById("length");
+var uppercase = document.querySelector(".check-uppercase");
+var lowercase = document.querySelector(".check-lowercase");
+var numbers = document.querySelector(".check-numbers");
+var symbols = document.querySelector(".check-symbols");
+var generateBtn = document.querySelector(".generate-password");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  generateBtn.addEventListener("click", function () {
+    return generatedPassword.textContent = generate();
+  });
+});
+function generate() {
+  var password = (0,_generator__WEBPACK_IMPORTED_MODULE_0__["default"])(lengthEl.value, uppercase.checked, lowercase.checked, numbers.checked, symbols.checked);
+  return password || "Select length and options";
+}
+
+/***/ }),
+
+/***/ "./src/modules/generator.js":
+/*!**********************************!*\
+  !*** ./src/modules/generator.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ generatePassword)
+/* harmony export */ });
+var randomNumber = function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+var generateUppercase = function generateUppercase() {
+  return String.fromCharCode(randomNumber(65, 91));
+};
+var generateLowercase = function generateLowercase() {
+  return String.fromCharCode(randomNumber(97, 123));
+};
+var generateNumber = function generateNumber() {
+  return String.fromCharCode(randomNumber(48, 57));
+};
+var symbols = "!@#$%^&*(){}[]=<>/,.";
+var generateRandomSymbol = function generateRandomSymbol() {
+  return symbols.charAt(randomNumber(0, symbols.length));
+};
+function generatePassword(length, upper, lower, numbers, symbols) {
+  var passwordArray = [];
+  length = +length;
+  for (var i = 0; i < length; i++) {
+    upper && passwordArray.push(generateUppercase());
+    lower && passwordArray.push(generateLowercase());
+    numbers && passwordArray.push(generateNumber());
+    symbols && passwordArray.push(generateRandomSymbol());
+  }
+  return passwordArray.join("").slice(0, length);
+}
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/assets/styles/style.css":
 /*!***************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/assets/styles/style.css ***!
@@ -611,8 +682,11 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _assets_styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/styles/style.css */ "./src/assets/styles/style.css");
+/* harmony import */ var _modules_formhandler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/formhandler.js */ "./src/modules/formhandler.js");
+/* harmony import */ var _assets_styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/styles/style.css */ "./src/assets/styles/style.css");
 
+
+(0,_modules_formhandler_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()
