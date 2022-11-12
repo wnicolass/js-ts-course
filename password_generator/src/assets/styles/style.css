@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 :root {
-  --purple: rgb(110, 3, 186);
-  --purple-dark: rgb(56, 3, 94);
+  --purple: rgb(68, 135, 121);
+  --purple-dark: rgb(38, 78, 77);
 
   font-size: 62.5%; /* 1rem = 10px */
 }
@@ -20,51 +20,54 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
   line-height: 1.5em;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
 }
 
 .container {
-  max-width: 64rem;
+  width: min(90%, 640px);
 
-  margin: 5rem auto;
+  margin-inline: auto;
   padding: 2rem;
   background: #ffffff;
 
   border-radius: 0.7rem;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translateY(-10%);
 }
 
 .container h1 {
   font-size: 3rem;
 }
 
-form input,
-form label,
-form button {
-  display: block;
-  width: 100%;
+.generated-password {
+  font-size: 4rem;
+  margin-bottom: 2rem;
 
-  margin-bottom: 1rem;
+  color: var(--purple);
 }
 
-form input {
+.input-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+form label {
   font-size: 2rem;
-  height: 4rem;
-
-  border-radius: 1.5rem;
-
-  padding-inline: 2.5rem;
-  border: none;
-
-  background-color: #83828219;
-
-  transition: outline 0.2s ease;
 }
 
-form input:focus {
-  outline: 1px solid var(--purple);
+form input[type="checkbox"] {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
-form button {
+button {
   border: none;
   background-color: var(--purple);
   color: white;
@@ -84,6 +87,10 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
+button:hover {
   background-color: var(--purple-dark);
+}
+
+button:active {
+  transform: scale(98%);
 }

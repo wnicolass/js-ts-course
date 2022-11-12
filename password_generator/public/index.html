@@ -8,22 +8,33 @@
   </head>
   <body>
     <section class="container">
-      <h1>IMC Table</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error laborum
-        minus vitae unde quaerat amet distinctio culpa rem molestias repellendus
-        non blanditiis sit sapiente, totam dolor maiores eos tempore est!
-      </p>
+      <h1>Password Generator</h1>
+      <div class="generated-password"></div>
 
-      <form action="#">
-        <label for="input-teste-1">label teste #1</label>
-        <input type="text" id="input-teste-1" />
+      <form>
+        <div class="input-control">
+          <label for="length">Password length: </label>
+          <input type="number" id="length" min="1" max="25" />
+        </div>
 
-        <label for="input-teste-2">label teste #2</label>
-        <input type="text" id="input-teste-2" />
-
-        <button>Submit</button>
+        <div class="input-control">
+          <label>Include uppercase letters</label>
+          <input type="checkbox" class="check-uppercase" checked />
+        </div>
+        <div class="input-control">
+          <label>Include lowercase letters</label>
+          <input type="checkbox" class="check-lowercase" />
+        </div>
+        <div class="input-control">
+          <label>Include numbers</label>
+          <input type="checkbox" class="check-numbers" />
+        </div>
+        <div class="input-control">
+          <label>Include letters</label>
+          <input type="checkbox" class="check-symbols" checked />
+        </div>
       </form>
+      <button class="generate-password">Generate Password</button>
     </section>
 
     <script src="./assets/js/bundle.js"></script>
