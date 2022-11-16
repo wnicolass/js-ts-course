@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ generatePassword)
 /* harmony export */ });
+/* harmony import */ var _shuffle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shuffle */ "./src/modules/shuffle.js");
+
 var randomNumber = function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 };
@@ -68,7 +70,29 @@ function generatePassword(length, upper, lower, numbers, symbols) {
     numbers && passwordArray.push(generateNumber());
     symbols && passwordArray.push(generateRandomSymbol());
   }
+  (0,_shuffle__WEBPACK_IMPORTED_MODULE_0__["default"])(passwordArray);
   return passwordArray.join("").slice(0, length);
+}
+
+/***/ }),
+
+/***/ "./src/modules/shuffle.js":
+/*!********************************!*\
+  !*** ./src/modules/shuffle.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ shuffleArray)
+/* harmony export */ });
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var _ref = [array[j], array[i]];
+    array[i] = _ref[0];
+    array[j] = _ref[1];
+  }
 }
 
 /***/ }),

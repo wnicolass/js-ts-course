@@ -1,3 +1,5 @@
+import shuffleArray from "./shuffle";
+
 const randomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min) + min);
 const generateUppercase = () => String.fromCharCode(randomNumber(65, 91));
@@ -23,6 +25,8 @@ export default function generatePassword(
     numbers && passwordArray.push(generateNumber());
     symbols && passwordArray.push(generateRandomSymbol());
   }
+
+  shuffleArray(passwordArray);
 
   return passwordArray.join("").slice(0, length);
 }
